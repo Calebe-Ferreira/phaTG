@@ -1,0 +1,55 @@
+.body {
+    font-family: Raleway;
+    background: #ccf4e7;
+  }
+
+.row, .espacamento{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.teste input [type="radio"]{
+    display: none;
+}   
+.teste h5{
+    padding: 10px;
+    margin: 15px 10px 0 0;
+    background: #5bc0de;
+    border-radius: 3px;
+    display: inline-block;
+    color: #fff;
+    cursor: pointer;
+}
+.teste input:checked + h5{
+    background: #5CB85C;
+    font-weight: bold;
+}
+.csscheckbox input [type="checkbox"] {
+    display: none;
+}
+
+.csscheckbox h5 {
+    padding: 10px;
+    margin: 15px 10px 0 0;
+    background: #5bc0de;
+    border-radius: 3px;
+    display: inline-block;
+    color: #fff;
+    cursor: pointer;
+}
+
+.csscheckbox input:checked + h5{
+    background: #5CB85C;
+    font-weight: bold;
+}
+
+agm-map{
+    width: 680px;
+    height: 400px;
+    margin: auto;
+}
+.esp{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
