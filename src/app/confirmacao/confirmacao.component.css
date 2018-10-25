@@ -24,11 +24,11 @@
     background: #5CB85C;
     font-weight: bold;
 }
-.csscheckbox input [type="checkbox"] {
+.csscheckbox label [type="checkbox"] {
     display: none;
 }
 
-.csscheckbox h5 {
+.csscheckbox label {
     padding: 10px;
     margin: 15px 10px 0 0;
     background: #5bc0de;
@@ -38,7 +38,7 @@
     cursor: pointer;
 }
 
-.csscheckbox input:checked + h5{
+.csscheckbox input:checked + label{
     background: #5CB85C;
     font-weight: bold;
 }

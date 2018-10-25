@@ -45,9 +45,9 @@
     </div>
   </div>
 
- <div class="container">
+ <div class="container d-flex justify-content-center">
    <div class="row">
-      <div *ngIf="lat && lng" class="espacamento text-center col-sm-10">
+      <div *ngIf="lat && lng" class="espacamento text-center col-sm-12">
 
           <agm-map [latitude]="lat" [longitude]="lng" [zoom]="18" class="espacamento">
       
@@ -124,38 +124,45 @@
           </div>
         </div>
 
-        <h4>Cabeça</h4>
-        <div class="form-check" *ngFor="let cabeca of cabecas">
-            <input class="form-check-input" (change)="onChange(cabeca.name, $event.target.checked)"name="{{ cabeca.name }}" type="checkbox" id="{{cabeca.name}}">
-            <label class="form-check-label" for="{{cabeca.name}}">
+        <div class="form-check-inline d-flex justify-content-center espacamento">
+        <h4 class="espacamento">Cabeça</h4>
+        <div class="form-check csscheckbox espacamento" *ngFor="let cabeca of cabecas">
+            <input class="form-check-input csscheckbox espacamento" (change)="onChange(cabeca.name, $event.target.checked)"name="{{ cabeca.name }}" type="checkbox" id="{{cabeca.name}}">
+            <label class="form-check-label espacamento" for="{{cabeca.name}}">
                 {{cabeca.name}}
             </label>
         </div>
+        </div>  
 
-        <h4>Tronco</h4>
-        <div class="form-check" *ngFor="let t of ts">
-            <input class="form-check-input" (change)="onChange(t.name, $event.target.checked)"name="{{ t.name }}" type="checkbox" id="{{t.name}}">
-            <label class="form-check-label" for="{{t.name}}">
+        <div class="form-check-inline d-flex justify-content-center espacamento">
+        <h4 class="espacamento">Tronco</h4>
+        <div class="form-check csscheckbox espacamento" *ngFor="let t of ts">
+            <input class="form-check-input csscheckbox espacamento" (change)="onChange(t.name, $event.target.checked)"name="{{ t.name }}" type="checkbox" id="{{t.name}}">
+            <label class="form-check-label espacamento" for="{{t.name}}">
                 {{t.name}}
             </label>
         </div>
-      
-        <h4>Membros Superiores</h4>
-        <div class="form-check" *ngFor="let ms of mss">
-            <input class="form-check-input" (change)="onChange(ms.name, $event.target.checked)"name="{{ ms.name }}" type="checkbox" id="{{ms.name}}">
-            <label class="form-check-label" for="{{ms.name}}">
+        </div> 
+
+        <div class="form-check-inline d-flex justify-content-center espacamento">
+        <h4 class="espacamento">Membros Superiores</h4>
+        <div class="form-check csscheckbox espacamento" *ngFor="let ms of mss">
+            <input class="form-check-input csscheckbox espacamento" (change)="onChange(ms.name, $event.target.checked)"name="{{ ms.name }}" type="checkbox" id="{{ms.name}}">
+            <label class="form-check-label espacamento" for="{{ms.name}}">
                 {{ms.name}}
             </label>
         </div>
-    
-        <h4>Membros Inferiores</h4>
-        <div class="form-check" *ngFor="let mi of mis">
-            <input class="form-check-input" (change)="onChange(mi.name, $event.target.checked)"name="{{ mi.name }}" type="checkbox" id="{{mi.name}}">
-            <label class="form-check-label" for="{{mi.name}}">
+        </div> 
+
+        <div class="form-check-inline d-flex justify-content-center espacamento">
+        <h4 class="espacamento">Membros Inferiores</h4>
+        <div class="form-check csscheckbox espacamento" *ngFor="let mi of mis">
+            <input class="form-check-input csscheckbox espacamento" (change)="onChange(mi.name, $event.target.checked)"name="{{ mi.name }}" type="checkbox" id="{{mi.name}}">
+            <label class="form-check-label espacamento" for="{{mi.name}}">
                 {{mi.name}}
             </label>
         </div>
-
+        </div>
           <!--<div class="container">
             <div class="row">
               <div class="col-sm-4 espacamento">
