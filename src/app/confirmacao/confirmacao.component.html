@@ -123,36 +123,40 @@
             </div>
           </div>
         </div>
-        
-        <div class="container">
-            <div class="row">
-              <div class="col-sm-4 espacamento">
-                <h3 class="text-center">Cabeça</h3>
-                <hr />
-              </div>
-            </div>
-        </div>      
 
-      <div class="container form-group text-center">
-          <label for="cabecas"></label>
-        <div class="form-check form-check-inline csscheckbox row espacamento text-center" *ngFor="let cabeca of cabecas">
-          <label for="">
-          <input class="espacamento"
-          type="checkbox"
-          name="cabecas"
-          value="{{ cabeca }}"
-          [checked]="cabecas.indexOf(cabeca) >= 0"
-          (change)="updateCheckedOptions(cabeca, $event)" [(ngModel)]="chamado.fraturaFerimento"/>
-          {{ cabeca }}
-        </label>
-          <!--<h5 class="form-check espacamento" > </h5>-->
-          
+        <h4>Cabeça</h4>
+        <div class="form-check" *ngFor="let cabeca of cabecas">
+            <input class="form-check-input" (change)="onChange(cabeca.name, $event.target.checked)"name="{{ cabeca.name }}" type="checkbox" id="{{cabeca.name}}">
+            <label class="form-check-label" for="{{cabeca.name}}">
+                {{cabeca.name}}
+            </label>
         </div>
-        
-      </div>
 
+        <h4>Tronco</h4>
+        <div class="form-check" *ngFor="let t of ts">
+            <input class="form-check-input" (change)="onChange(t.name, $event.target.checked)"name="{{ t.name }}" type="checkbox" id="{{t.name}}">
+            <label class="form-check-label" for="{{t.name}}">
+                {{t.name}}
+            </label>
+        </div>
+      
+        <h4>Membros Superiores</h4>
+        <div class="form-check" *ngFor="let ms of mss">
+            <input class="form-check-input" (change)="onChange(ms.name, $event.target.checked)"name="{{ ms.name }}" type="checkbox" id="{{ms.name}}">
+            <label class="form-check-label" for="{{ms.name}}">
+                {{ms.name}}
+            </label>
+        </div>
     
-          <div class="container">
+        <h4>Membros Inferiores</h4>
+        <div class="form-check" *ngFor="let mi of mis">
+            <input class="form-check-input" (change)="onChange(mi.name, $event.target.checked)"name="{{ mi.name }}" type="checkbox" id="{{mi.name}}">
+            <label class="form-check-label" for="{{mi.name}}">
+                {{mi.name}}
+            </label>
+        </div>
+
+          <!--<div class="container">
             <div class="row">
               <div class="col-sm-4 espacamento">
                 <h3 class="text-center">Tronco</h3>
@@ -169,7 +173,7 @@
             type="checkbox"
             name="tronco"
             value="{{ tronco }}"
-            (change)="radioChangeHandler3($event)"
+            (change)="radioChangeHandler3($event)" [(ngModel)]="chamado.fraturaFerimento"
             id="check2"/>
 
             <h5 class="col-sm espacamento" for="check2"> {{ tronco }}</h5>
@@ -229,7 +233,7 @@
 
         </div>
 
-      </div>
+      </div>-->
 
 <!--FIM TRAUMAS, FRATURAS, FERIMENTOS-->
 

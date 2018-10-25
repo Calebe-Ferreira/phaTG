@@ -1,9 +1,9 @@
 export class Chamado {
     $key: string;
     nomeHospital: string;
-    localizacao: string;
+    localizacao: any;
     gravidade: string;
-    fraturaFerimento: string;
+    fraturaFerimento: any [];
     infoAdicionais: string;
 }
 
