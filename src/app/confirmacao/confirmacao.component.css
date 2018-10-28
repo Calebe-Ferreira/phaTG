@@ -3,7 +3,7 @@
     background: #ccf4e7;
   }
 
-.row, .espacamento{
+.espacamento{
     margin-bottom: 10px;
     margin-top: 10px;
     margin-right: 10px;
@@ -11,6 +11,7 @@
 .teste input [type="radio"]{
     display: none;
 }   
+
 .teste h5{
     padding: 10px;
     margin: 15px 10px 0 0;
@@ -52,4 +53,15 @@ agm-map{
     margin-bottom: 10px;
     margin-top: 10px;
     text-align: center;
+}
+
+table {width:100%;}
+
+th, td {
+    padding: 0px;
+    text-align: center;
+}
+
+.testeT {
+    margin: 10px 10px 10px 10px;
 }

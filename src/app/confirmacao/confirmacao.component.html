@@ -10,15 +10,14 @@
     <div class="row">
       <div class="col-sm-12 espacamento">
         <h3 class="text-center">Escolha o hospital desejado:</h3>
-        <hr />
       </div>
     </div>
   </div>
   
     <div class="container form-group text-center">
     
-      <div class="form-check form-check-inline row espacamento teste text-center" *ngFor="let hospital of hospitais">
-        
+      <div class="form-check form-check-inline row espacamento teste" *ngFor="let hospital of hospitais">
+
         <input class="espacamento"
         type="radio"
         name="hospital"
@@ -26,7 +25,7 @@
         (change)="radioChangeHandler($event)"
         id="radioh" [(ngModel)]="chamado.nomeHospital"/> 
 
-        <h5 class="col-sm espacamento" for="radioh"> {{ hospital }} </h5>
+        <h5 class="col-sm-" for="radioh"> {{ hospital }} </h5>
 
       </div>
    
@@ -40,14 +39,13 @@
     <div class="row">
       <div class="col-sm-12 espacamento">
         <h3 class="text-center"> Localização da Ocorrência</h3>
-        <hr />
       </div>
     </div>
   </div>
 
  <div class="container d-flex justify-content-center">
    <div class="row">
-      <div *ngIf="lat && lng" class="espacamento text-center col-sm-12">
+      <div *ngIf="lat && lng" class="col-sm-12 text-center">
 
           <agm-map [latitude]="lat" [longitude]="lng" [zoom]="18" class="espacamento">
       
@@ -91,7 +89,6 @@
       <div class="row">
         <div class="col-sm-12 espacamento">
           <h3 class="text-center">Nível de gravidade: </h3>
-          <hr />
         </div>
       </div>
     </div>
@@ -116,145 +113,75 @@
 <!--INICIO TRAUMAS, FRATURAS, FERIMENTOS-->
 
         <div class="container">
-          <div class="row">
+          <div class="row ">
             <div class="col-sm-12 espacamento">
-              <h3 class="text-center">Locais de possíveis traumas, fraturas e ferimentos:</h3>
-              <hr />
+              <h3 class="text-center">Locais de possíveis traumas, fraturas ou ferimentos:</h3>
+              <hr/>
             </div>
           </div>
         </div>
+        
+<div class="table-responsive-sm">
+        <table class="table table-condensed table-borderless">
+            <tr class="info">
+              <th><h4>Cabeça</h4></th>
+              <th><h4>Tronco</h4></th>
+              <th><h4>Membros Superiores</h4></th>
+              <th><h4>Membros Inferiores</h4></th>
+            </tr>
+            <tr>
 
-        <div class="form-check-inline d-flex justify-content-center espacamento">
-        <h4 class="espacamento">Cabeça</h4>
-        <div class="form-check csscheckbox espacamento" *ngFor="let cabeca of cabecas">
-            <input class="form-check-input csscheckbox espacamento" (change)="onChange(cabeca.name, $event.target.checked)"name="{{ cabeca.name }}" type="checkbox" id="{{cabeca.name}}">
-            <label class="form-check-label espacamento" for="{{cabeca.name}}">
-                {{cabeca.name}}
-            </label>
-        </div>
-        </div>  
+              <th>
+                  <div class="form-check csscheckbox espacamento" *ngFor="let cabeca of cabecas">
+                      <input class="form-check-input csscheckbox" (change)="onChange(cabeca.name, $event.target.checked)"name="{{ cabeca.name }}" type="checkbox" id="{{cabeca.name}}">
+                      <label class="form-check-label espacamento" for="{{cabeca.name}}">
+                          {{cabeca.name}}
+                      </label>
+                  </div>
+              </th>
 
-        <div class="form-check-inline d-flex justify-content-center espacamento">
-        <h4 class="espacamento">Tronco</h4>
-        <div class="form-check csscheckbox espacamento" *ngFor="let t of ts">
-            <input class="form-check-input csscheckbox espacamento" (change)="onChange(t.name, $event.target.checked)"name="{{ t.name }}" type="checkbox" id="{{t.name}}">
-            <label class="form-check-label espacamento" for="{{t.name}}">
-                {{t.name}}
-            </label> 
-        </div>
-        </div> 
+              <th>
+                  <div class="form-check csscheckbox espacamento" *ngFor="let t of ts">
+                      <input class="form-check-input csscheckbox" (change)="onChange(t.name, $event.target.checked)"name="{{ t.name }}" type="checkbox" id="{{t.name}}">
+                      <label class="form-check-label espacamento" for="{{t.name}}">
+                          {{t.name}}
+                      </label> 
+                  </div>
+              </th>
 
-        <div class="form-check-inline d-flex justify-content-center espacamento">
-        <h4 class="espacamento">Membros Superiores</h4>
-        <div class="form-check csscheckbox espacamento" *ngFor="let ms of mss">
-            <input class="form-check-input csscheckbox espacamento" (change)="onChange(ms.name, $event.target.checked)"name="{{ ms.name }}" type="checkbox" id="{{ms.name}}">
-            <label class="form-check-label espacamento" for="{{ms.name}}">
-                {{ms.name}}
-            </label>
-        </div>
-        </div> 
+                <th>
+                    <div class="form-check csscheckbox espacamento" *ngFor="let ms of mss">
+                        <input class="form-check-input csscheckbox espacamento" (change)="onChange(ms.name, $event.target.checked)"name="{{ ms.name }}" type="checkbox" id="{{ms.name}}">
+                        <label class="form-check-label espacamento" for="{{ms.name}}">
+                            {{ms.name}}
+                        </label>
+                    </div>  
+                </th>
 
-        <div class="form-check-inline d-flex justify-content-center espacamento">
-        <h4 class="espacamento">Membros Inferiores</h4>
-        <div class="form-check csscheckbox espacamento" *ngFor="let mi of mis">
-            <input class="form-check-input csscheckbox espacamento" (change)="onChange(mi.name, $event.target.checked)"name="{{ mi.name }}" type="checkbox" id="{{mi.name}}">
-            <label class="form-check-label espacamento" for="{{mi.name}}">
-                {{mi.name}}
-            </label>
-        </div>
-        </div>
-          <!--<div class="container">
-            <div class="row">
-              <div class="col-sm-4 espacamento">
-                <h3 class="text-center">Tronco</h3>
-                <hr />
-              </div>
-            </div>
-          </div>
-
-      <div class="container form-group text-center">
-
-        <div class="form-check form-check-inline csscheckbox row espacamento text-center" *ngFor="let tronco of troncos">
-
-            <input class="espacamento"
-            type="checkbox"
-            name="tronco"
-            value="{{ tronco }}"
-            (change)="radioChangeHandler3($event)" [(ngModel)]="chamado.fraturaFerimento"
-            id="check2"/>
-
-            <h5 class="col-sm espacamento" for="check2"> {{ tronco }}</h5>
-        </div>
-
-      </div>
-          
-        <div class="container">
-            <div class="row">
-              <div class="col-sm-4 espacamento">
-                <h3 class="text-center">Membros Superiores</h3>
-                <hr />
-              </div>
-            </div>
-        </div>
-
-      <div class="container form-group text-center">
-
-        <div class="form-check form-check-inline csscheckbox row espacamento text-center" *ngFor="let ms of mss">
-            
-          <input class="espacamento"
-          type="checkbox"
-          name="ms"
-          value="{{ ms }}"
-          (change)="radioChangeHandler4($event)"
-          id="check3"/>
-
-          <h5 class="col-sm espacamento" for="check3"> {{ ms }}</h5>
-
-        </div>
-
-      </div>
-
-
-        <div class="container">
-            <div class="row">
-              <div class="col-sm-4 espacamento">
-                <h3 class="text-center">Membros Inferiores</h3>
-                <hr />
-              </div>
-            </div>
-        </div>
-
-
-      <div class="container form-group text-center">
-
-        <div class="form-check form-check-inline csscheckbox row espacamento text-center" *ngFor="let mi of mis">
-
-            <input class="espacamento"
-            type="checkbox"
-            name="mi"
-            value="{{ mi }}"
-            (change)="radioChangeHandler5($event)"
-            id="check4"/>
-
-            <h5 class="col-sm espacamento" for="check4"> {{ mi }}</h5>
-
-        </div>
-
-      </div>-->
+                <th>
+                    <div class="form-check csscheckbox espacamento" *ngFor="let mi of mis">
+                        <input class="form-check-input csscheckbox espacamento" (change)="onChange(mi.name, $event.target.checked)"name="{{ mi.name }}" type="checkbox" id="{{mi.name}}">
+                        <label class="form-check-label espacamento" for="{{mi.name}}">
+                            {{mi.name}}
+                        </label>
+                    </div>
+                </th>
+            </tr>
+          </table>
+        </div>         
 
 <!--FIM TRAUMAS, FRATURAS, FERIMENTOS-->
 
 <!--INÍCIO INFORMAÇÕES ADICIONAIS-->
 
-  <div class="container form-group text-center">
-
-    <div class="row">              
-      <div class="col-sm-10 espacamento">
-        <h4 class="text-center">Insira mais informações à respeito da vítima</h4>
+<div class="container form-group">
+    <div class="row ">
+      <div class="col-sm-12 espacamento">
+        <h3 class="text-center">Insira mais informações à respeito da vítima</h3>
         <input class="form-control" type="text" name="infoAdicionais" id="infoAdicionais" [(ngModel)]="chamado.infoAdicionais">
+        <hr/>
       </div>
     </div>
-
   </div>
 
 <!--FIM INFORMAÇÕES ADICIONAIS-->
@@ -264,8 +191,7 @@
   <div class="container d-flex justify-content-end">
     <div class="row">
       <div class="col-sm-12">
-         
-        <button type="submit" class="btn btn-success btn-lg" (click)="my" data-toggle="modal" data-target="#exampleModal">Enviar</button>
+        <button type="submit" class="btn btn-success btn-lg espacamento" (click)="my" data-toggle="modal" data-target="#exampleModal">Enviar</button>
       </div>
     </div>
   </div>

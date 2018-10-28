@@ -93,7 +93,8 @@ export class ConfirmacaoComponent implements OnInit {
 
   onSubmit(){
     //this.submitted = true; //da problema quando esta sem comentar
-    this.chamado.localizacao = this.lat + this.lng;
+    this.chamado.localizacao = this.lat;
+    this.chamado.localizacao = this.lng;
     this.chamado.fraturaFerimento = this.partesFormArray;
     this.salvar()
   }
