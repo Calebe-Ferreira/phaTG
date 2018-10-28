@@ -57,7 +57,7 @@ export class ConfirmacaoComponent implements OnInit {
   mis = [ 
     {name:"Quadril", id: 1},
     {name:"Coxa", id: 2},
-    {name:"Pelve", id: 3},
+    {name:"Perna", id: 3},
     {name: "Pé", id: 4}
   ];
   
