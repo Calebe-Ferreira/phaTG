@@ -5,5 +5,6 @@ export class Chamado {
     gravidade: string;
     fraturaFerimento: any [];
     infoAdicionais: string;
+    dataEhora:string;
 }
 

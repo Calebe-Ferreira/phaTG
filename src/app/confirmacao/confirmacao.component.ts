@@ -72,6 +72,8 @@ export class ConfirmacaoComponent implements OnInit {
   
   }
 
+  mydate = Date.now();
+
   onChange(partes:string, isChecked: boolean) {
   if(isChecked) {
     this.partesFormArray.push(partes);
@@ -96,9 +98,11 @@ export class ConfirmacaoComponent implements OnInit {
     this.chamado.localizacao = this.lat;
     this.chamado.localizacao = this.lng;
     this.chamado.fraturaFerimento = this.partesFormArray;
+    this.chamado.dataEhora = this.mydate.toString();
     this.salvar()
   }
 
+  
   /*private seedDatabase () {
     let dummyPoints =[
       [37.9, -122.1]

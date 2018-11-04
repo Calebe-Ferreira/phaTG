@@ -162,6 +162,8 @@
         <h3 class="text-center">Insira mais informações à respeito da vítima</h3>
           <input class="form-control" type="text" name="infoAdicionais" id="infoAdicionais" [(ngModel)]="chamado.infoAdicionais">
           <hr/>
+          <h3>Data e hora da ocorrência</h3>
+          <p>{{mydate | date: 'medium'}}</p>
       </div>
     </div>
   </div>
